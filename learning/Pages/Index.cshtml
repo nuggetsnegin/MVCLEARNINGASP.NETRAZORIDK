@@ -2,13 +2,30 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-    var name = "negin";
+    var name = "Negin";
+    var name2 = "Andrew";
+
+    //born
+    // Create instances  
+    var preTimeHour = new DateTime(2020, 2, 5);  
+    var preTimeYear = new DateTime(1991, 5, 31); 
+  
+    var preTimeYearAndrew = new DateTime(1992, 9, 9); 
+
+    var elapsedHours = DateTime.Now.Subtract(preTimeHour).Hours;  
+    var elapsedYear = DateTime.Now.Subtract(preTimeYear).Days; 
+
+    var elapsedYear2 = DateTime.Now.Subtract(preTimeYearAndrew).Days; 
+
+    var difference = elapsedYear - elapsedYear2;
 }
 
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
-    <h2>Hellooooooooooooooo @name, the time is @DateTime.Now</h2>
+    <h2>Hi @name!</h2>
+    <p>You have been alive for @elapsedYear days (your birthday was in @preTimeYear)!🤯</p>
+    <p>Meanwhile, @name2 has been alive for @elapsedYear2 (his birthday was in @preTimeYearAndrew)! 🤗</p>
+    <p>@name has been alive for @difference more days! 🙄</p>
 </div>
